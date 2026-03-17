@@ -9,7 +9,7 @@
   width: var(--cWidth);
   max-width: 1920px;
   margin: auto;
-  z-index: 9;
+  z-index: 12;
 }
 .what-box {
   width: 50%;
@@ -38,6 +38,7 @@
   margin-left: 200px;
   position: relative;
   display: none;
+  z-index: 12;
 }
 .what-content {
   width: 450px;
@@ -239,6 +240,12 @@
   border: 1px solid #ffffff50;
   border-radius: 30px;
 }
+@media only screen and (min-width: 1025px) {
+  .what-box-in {
+    margin-left: min(280px, 18vw);
+  }
+}
+
 @media only screen and (max-width: 1600px) {
   .what-box h2 {
     margin-right: 18%;
@@ -277,7 +284,7 @@
 }
 @media only screen and (max-width: 1400px) {
   .what-box-in {
-    margin-left: 50px;
+    margin-left: min(160px, 12vw);
   }
   .what-content {
     width: 380px;

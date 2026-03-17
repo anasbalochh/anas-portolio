@@ -53,10 +53,14 @@
     height: var(--vh);
     padding: 0px;
     opacity: 1;
+    position: relative;
+    z-index: 12;
   }
   .about-me {
     padding: 0px;
     width: 50%;
+    max-width: 55%;
+    margin-left: 8%;
   }
   .about-me p {
     font-size: 1.9vw;
