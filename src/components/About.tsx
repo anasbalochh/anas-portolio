@@ -2,9 +2,9 @@ import "./styles/About.css";
 
 const About = () => {
   return (
-    <div className="about-section" id="about">
+    <section className="about-section" id="about" aria-labelledby="about-heading">
       <div className="about-me">
-        <h3 className="title">About Me</h3>
+        <h2 id="about-heading" className="title">About Me</h2>
         <p className="para">
           Full Stack Developer with 3+ years of experience building scalable web
           applications using React.js, Angular, Next.js, Node.js, and NestJS. Skilled
@@ -13,7 +13,7 @@ const About = () => {
           from concept to deployment.
         </p>
       </div>
-    </div>
+    </section>
   );
 };
 

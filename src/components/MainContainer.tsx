@@ -24,10 +24,8 @@ const MainContainer = ({ children }: PropsWithChildren) => {
     };
     resizeHandler();
     window.addEventListener("resize", resizeHandler);
-    return () => {
-      window.removeEventListener("resize", resizeHandler);
-    };
-  }, [isDesktopView]);
+    return () => window.removeEventListener("resize", resizeHandler);
+  }, []);
 
   return (
     <div className="container-main">
@@ -36,19 +34,19 @@ const MainContainer = ({ children }: PropsWithChildren) => {
       <SocialIcons />
       {isDesktopView && children}
       <div id="smooth-wrapper">
-        <div id="smooth-content">
+        <main id="smooth-content">
           <div className="container-main">
             <Landing>{!isDesktopView && children}</Landing>
             <About />
             <WhatIDo />
             <Career />
             <Work />
-            <Suspense fallback={<div>Loading....</div>}>
+            <Suspense fallback={<div aria-busy="true">Loading…</div>}>
               <TechStack />
             </Suspense>
             <Contact />
           </div>
-        </div>
+        </main>
       </div>
     </div>
   );

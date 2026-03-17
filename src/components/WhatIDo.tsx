@@ -2,6 +2,16 @@ import { useEffect, useRef } from "react";
 import "./styles/WhatIDo.css";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+// SVG border dimensions and line lengths (from reference – single source of truth)
+const SVG_WIDTH = "100%";
+const SVG_HEIGHT = "100%";
+const STROKE_COLOR = "white";
+const STROKE_WIDTH = 2;
+const DASH_VERTICAL = "7,7";   // what-border2 (vertical lines)
+const DASH_HORIZONTAL = "6,6"; // what-border1 (horizontal lines)
+const PERCENT_0 = "0";
+const PERCENT_100 = "100%";
+
 const WhatIDo = () => {
   const containerRef = useRef<(HTMLDivElement | null)[]>([]);
   const setRef = (el: HTMLDivElement | null, index: number) => {
@@ -25,36 +35,36 @@ const WhatIDo = () => {
     };
   }, []);
   return (
-    <div className="whatIDO">
-      <div className="what-box">
-        <h2 className="title">
+    <section className="whatIDO" aria-labelledby="whatido-heading">
+      <div className="what-box what-box-title">
+        <h2 id="whatido-heading" className="title">
           W<span className="hat-h2">HAT</span>
-          <div>
+          <span style={{ display: "block" }}>
             I<span className="do-h2"> DO</span>
-          </div>
+          </span>
         </h2>
       </div>
       <div className="what-box">
         <div className="what-box-in">
           <div className="what-border2">
-            <svg width="100%">
+            <svg width={SVG_WIDTH} aria-hidden="true">
               <line
-                x1="0"
-                y1="0"
-                x2="0"
-                y2="100%"
-                stroke="white"
-                strokeWidth="2"
-                strokeDasharray="7,7"
+                x1={PERCENT_0}
+                y1={PERCENT_0}
+                x2={PERCENT_0}
+                y2={PERCENT_100}
+                stroke={STROKE_COLOR}
+                strokeWidth={STROKE_WIDTH}
+                strokeDasharray={DASH_VERTICAL}
               />
               <line
-                x1="100%"
-                y1="0"
-                x2="100%"
-                y2="100%"
-                stroke="white"
-                strokeWidth="2"
-                strokeDasharray="7,7"
+                x1={PERCENT_100}
+                y1={PERCENT_0}
+                x2={PERCENT_100}
+                y2={PERCENT_100}
+                stroke={STROKE_COLOR}
+                strokeWidth={STROKE_WIDTH}
+                strokeDasharray={DASH_VERTICAL}
               />
             </svg>
           </div>
@@ -63,24 +73,24 @@ const WhatIDo = () => {
             ref={(el) => setRef(el, 0)}
           >
             <div className="what-border1">
-              <svg height="100%">
+              <svg height={SVG_HEIGHT} aria-hidden="true">
                 <line
-                  x1="0"
-                  y1="0"
-                  x2="100%"
-                  y2="0"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
+                  x1={PERCENT_0}
+                  y1={PERCENT_0}
+                  x2={PERCENT_100}
+                  y2={PERCENT_0}
+                  stroke={STROKE_COLOR}
+                  strokeWidth={STROKE_WIDTH}
+                  strokeDasharray={DASH_HORIZONTAL}
                 />
                 <line
-                  x1="0"
-                  y1="100%"
-                  x2="100%"
-                  y2="100%"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
+                  x1={PERCENT_0}
+                  y1={PERCENT_100}
+                  x2={PERCENT_100}
+                  y2={PERCENT_100}
+                  stroke={STROKE_COLOR}
+                  strokeWidth={STROKE_WIDTH}
+                  strokeDasharray={DASH_HORIZONTAL}
                 />
               </svg>
             </div>
@@ -112,15 +122,15 @@ const WhatIDo = () => {
             ref={(el) => setRef(el, 1)}
           >
             <div className="what-border1">
-              <svg height="100%">
+              <svg height={SVG_HEIGHT} aria-hidden="true">
                 <line
-                  x1="0"
-                  y1="100%"
-                  x2="100%"
-                  y2="100%"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
+                  x1={PERCENT_0}
+                  y1={PERCENT_100}
+                  x2={PERCENT_100}
+                  y2={PERCENT_100}
+                  stroke={STROKE_COLOR}
+                  strokeWidth={STROKE_WIDTH}
+                  strokeDasharray={DASH_HORIZONTAL}
                 />
               </svg>
             </div>
@@ -148,7 +158,7 @@ const WhatIDo = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

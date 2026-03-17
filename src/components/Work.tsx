@@ -63,14 +63,13 @@ const Work = () => {
   }, [currentIndex, goToSlide]);
 
   return (
-    <div className="work-section" id="work">
+    <section className="work-section" id="work" aria-labelledby="work-heading">
       <div className="work-container section-container">
-        <h2>
+        <h2 id="work-heading">
           My <span>Work</span>
         </h2>
 
         <div className="carousel-wrapper">
-          {/* Navigation Arrows */}
           <button
             className="carousel-arrow carousel-arrow-left"
             onClick={goToPrev}
@@ -88,7 +87,6 @@ const Work = () => {
             <MdArrowForward />
           </button>
 
-          {/* Slides */}
           <div className="carousel-track-container">
             <div
               className="carousel-track"
@@ -123,8 +121,7 @@ const Work = () => {
             </div>
           </div>
 
-          {/* Dot Indicators */}
-          <div className="carousel-dots">
+          <div className="carousel-dots" role="tablist" aria-label="Project carousel">
             {projects.map((_, index) => (
               <button
                 key={index}
@@ -138,7 +135,7 @@ const Work = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

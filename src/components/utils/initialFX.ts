@@ -6,6 +6,10 @@ export function initialFX() {
   document.body.style.overflowY = "auto";
   smoother.paused(false);
   document.getElementsByTagName("main")[0].classList.add("main-active");
+  // Ensure 3D character is centered on home/landing page only (scroll will move it left on other sections)
+  if (window.innerWidth > 1024) {
+    gsap.set(".character-model", { xPercent: -50, x: 0 });
+  }
   gsap.to("body", {
     backgroundColor: "#0a0e17",
     duration: 0.5,

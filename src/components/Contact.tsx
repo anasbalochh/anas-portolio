@@ -3,9 +3,9 @@ import "./styles/Contact.css";
 
 const Contact = () => {
   return (
-    <div className="contact-section section-container" id="contact">
+    <section className="contact-section section-container" id="contact" aria-labelledby="contact-heading">
       <div className="contact-container">
-        <h3>Contact</h3>
+        <h2 id="contact-heading">Contact</h2>
         <div className="contact-flex">
           <div className="contact-box">
             <h4>Email</h4>
@@ -19,16 +19,16 @@ const Contact = () => {
           </div>
           <div className="contact-box">
             <h4>Social</h4>
-            <a href="#" target="_blank" data-cursor="disable" className="contact-social">
+            <a href="#" target="_blank" rel="noopener noreferrer" data-cursor="disable" className="contact-social">
               Github <MdArrowOutward />
             </a>
-            <a href="#" target="_blank" data-cursor="disable" className="contact-social">
+            <a href="#" target="_blank" rel="noopener noreferrer" data-cursor="disable" className="contact-social">
               Linkedin <MdArrowOutward />
             </a>
-            <a href="#" target="_blank" data-cursor="disable" className="contact-social">
+            <a href="#" target="_blank" rel="noopener noreferrer" data-cursor="disable" className="contact-social">
               Twitter <MdArrowOutward />
             </a>
-            <a href="#" target="_blank" data-cursor="disable" className="contact-social">
+            <a href="#" target="_blank" rel="noopener noreferrer" data-cursor="disable" className="contact-social">
               Instagram <MdArrowOutward />
             </a>
           </div>
@@ -42,7 +42,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

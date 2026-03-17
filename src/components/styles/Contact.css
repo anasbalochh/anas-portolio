@@ -7,7 +7,7 @@
   background-color: var(--backgroundColor);
 }
 
-.contact-section h3 {
+.contact-section .contact-container > h2 {
   font-size: 60px;
   font-weight: 400;
   text-transform: uppercase;
@@ -60,7 +60,7 @@ a.contact-social {
 }
 
 @media only screen and (max-width: 1600px) {
-  .contact-section h3 {
+  .contact-section .contact-container > h2 {
     font-size: 50px;
   }
 
@@ -74,7 +74,7 @@ a.contact-social {
 }
 
 @media only screen and (max-width: 1300px) {
-  .contact-section h3 {
+  .contact-section .contact-container > h2 {
     font-size: 40px;
   }
 
