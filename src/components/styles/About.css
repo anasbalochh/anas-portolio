@@ -58,9 +58,11 @@
   }
   .about-me {
     padding: 0px;
-    width: 50%;
-    max-width: 55%;
-    margin-left: 8%;
+    width: 48%;
+    max-width: 50%;
+    margin-left: 18%;
+    position: relative;
+    z-index: 1;
   }
   .about-me p {
     font-size: 1.9vw;

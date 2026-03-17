@@ -79,6 +79,12 @@ body {
   overflow-x: hidden;
 }
 
+/* Scroll content above fixed 3D character so About/WhatIDo text is readable */
+#smooth-wrapper {
+  position: relative;
+  z-index: 12;
+}
+
 .container-main {
   width: 100%;
   margin: auto;
@@ -108,9 +114,17 @@ body {
   position: relative;
   overflow: clip;
   height: var(--vh);
+  min-height: 500px;
   margin: auto;
   margin-top: 50px;
   margin-bottom: -100px;
+}
+
+.tech-canvas {
+  width: 100%;
+  height: 100%;
+  min-height: 350px;
+  display: block;
 }
 
 .techstack h2 {
@@ -133,5 +147,22 @@ body {
 @media screen and (max-width: 900px) {
   .techstack h2 {
     font-size: 40px;
+  }
+  .techstack {
+    min-height: 450px;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .techstack h2 {
+    font-size: 28px;
+    top: 80px;
+  }
+  .techstack {
+    min-height: 400px;
+  }
+  .tech-canvas {
+    min-height: 280px;
   }
 }
